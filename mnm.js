@@ -50,6 +50,8 @@ if (existsSync("/System/Library/Frameworks/JavaVM.framework/")) {
     if (javaHome) {
       if (existsSync(path.join(javaHome, "/jre/lib/i386/server/"))) {
         jdkLibDirGuess = path.join(javaHome, "/jre/lib/i386/server/");
+      } else if (existsSync(path.join(javaHome, "/jre/lib/arm/server/"))){
+        jdkLibDirGuess = path.join(javaHome, "/jre/lib/arm/server/");
       } else {
         jdkLibDirGuess = path.join(javaHome, "/jre/lib/amd64/server/");
       }
